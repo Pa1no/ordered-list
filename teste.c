@@ -1,3 +1,7 @@
+/* 
+    Integrantes do grupo: Eduardo Paino e Bernardo Kapp
+*/
+
 #include <stdio.h>
 #include "t_ordered_list.h"
 
