@@ -2,6 +2,23 @@
     Integrantes do grupo: Eduardo Paino e Bernardo Kapp
 */
 
+/*
+    Pontos fortes:
+        - Busca eficiente: como os elementos estão sempre em ordem, é possível usar busca binária para encontrar um elemento, 
+        em vez de percorrer o array inteiro elemento por elemento. Isso é uma vantagem em relação a uma lista não ordenada, 
+        que exigiria busca linear (O(n)) sempre.
+        - Acesso direto pelo índice (O(1)): por ser implementada como um array, qualquer elemento pode ser acessado diretamente por items[i], 
+        sem precisar percorrer a estrutura
+        - Facilidade de percorrer em ordem: como os dados já estão ordenados, operações como imprimir a lista, encontrar mínimo/máximo (primeiro e último elemento), 
+        ou percorrer em ordem crescente/decrescente são triviais e rápidas.
+    Pontos fracos:
+        - Inserção com alto custo (O(n)): como vimos na função list_insert, ao inserir um novo elemento no meio da lista, 
+        é necessário deslocar todos os elementos seguintes uma posição para frente, para manter a ordem e abrir espaço.
+        - Remoção custosa (O(n)): pelo mesmo motivo, remover um elemento do meio (como em list_remove) exige deslocar todos os elementos seguintes uma posição para trás, 
+        para fechar o buraco.
+        - Desperdício de memória: se o capacity for muito maior que o size real usado na maior parte do tempo, a memória fica alocada sem uso nenhum.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
