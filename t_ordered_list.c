@@ -84,7 +84,15 @@ int list_insert(t_ordered_list *list, int value) {
 
     if (list->size == list->capacity) {
 
-        return 0;
+        int new_capacity = (list->capacity == 0) ? 1 : list->capacity * 2;
+        int *new_items = realloc(list->items, new_capacity * sizeof(int));
+
+        if (new_items == NULL) {
+            return 0;
+        }
+
+        list->items = new_items;
+        list->capacity = new_capacity;
     }
 
     int pos = list->size;
